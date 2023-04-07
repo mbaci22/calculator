@@ -7,6 +7,8 @@ void multiplication();
 void division();
 void squareroot();
 void mpower();
+void area_per();
+
 
 int main()
 {
@@ -16,6 +18,7 @@ int main()
     division();
     squareroot();
     mpower();
+    area_per();
 
     return 0;
 }
@@ -50,15 +53,15 @@ void division()
     printf("Enter two numbers whose division you want: \n");
     scanf("%f %f", &a, &b);
      sum=(float)a/b;
-    printf("The division of %f and %f is : %f  \n", a,b,sum);
+    printf("The division of %f and %f is : %.2f  \n", a,b,sum);
 }
 void squareroot()
 {
-    float sum=0,a;
+    double sum=0,a;
     printf("Enter one number that you want the square root off: \n");
-    scanf("%f", &a);
-    sum=(float)sqrt(a);
-    printf("The square root of %f is : %f   \n", a,sum);
+    scanf("%lf", &a);
+    sum=sqrt(a);
+    printf("The square root of %lf is : %.2lf   \n", a,sum);
 }
 void mpower()
 {
@@ -71,4 +74,15 @@ void mpower()
         --b;
     }
     printf("Answer is: %d   \n", sum);
+}
+void area_per()
+{
+    int a,b;
+    double area, per;
+    printf("Enter the two sides of the rectangle: ");
+    scanf("%d %d", &a, &b);
+    per=2*(a+b);
+    area=a*b;
+    printf("Perimeter is: %.2lf\n ", per);
+    printf("Area is: %.2lf", area);
 }
