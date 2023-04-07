@@ -7,18 +7,23 @@ void multiplication();
 void division();
 void squareroot();
 void mpower();
-void area_per();
+void per();
+void area();
 
 
 int main()
 {
+    int d, c;
     sum();
     subtraction();
     multiplication();
     division();
     squareroot();
     mpower();
-    area_per();
+    printf("Enter two sides of the rectangle:");
+    scanf("%d %d", &d, &c);
+    per(d,c);
+    area(d,c);
 
     return 0;
 }
@@ -75,14 +80,16 @@ void mpower()
     }
     printf("Answer is: %d   \n", sum);
 }
-void area_per()
+void per(int d, int c)
 {
-    int a,b;
-    double area, per;
-    printf("Enter the two sides of the rectangle: ");
-    scanf("%d %d", &a, &b);
-    per=2*(a+b);
-    area=a*b;
+    double per;
+    per=2*(d+c);
     printf("Perimeter is: %.2lf\n ", per);
+
+}
+void area(int d,int c)
+{
+    double area;
+    area=d*c;
     printf("Area is: %.2lf", area);
 }
